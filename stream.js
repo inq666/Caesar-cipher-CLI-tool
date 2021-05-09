@@ -5,7 +5,7 @@ const { Transform, pipeline } = require('stream');
 const encryption = (shift) => (
   new Transform({
     transform(chunk, encoding, callback) {
-      const content = caesarCipher(chunk.toString(), shift)
+      const content = `${caesarCipher(chunk.toString(), shift)}\n`;
       this.push(content);
       callback();
     }

@@ -1,4 +1,4 @@
-const { createReadStream, createWriteStream } = require("fs");
+const fs = require("fs");
 const path = require('path');
 const createEncryptionStream = require('./stream');
 const { program } = require('commander');
@@ -25,6 +25,15 @@ if ((action !== 'encode' && action !== 'decode')) {
   process.exit(1);
 }
 
+const checkFileExist = (path) => {
+  try {
+    fs.accessSync(path, fs.F_OK)
+  } catch (err) {
+    process.stderr.write(`File ${path} does not exist or cannot be accessed. Please check the file path or accessibility`)
+    process.exit(1);
+  }
+};
+
 let inputStream;
 let outputStream;
 
@@ -32,23 +41,19 @@ if (!output && !input) {
   inputStream = process.stdin;
   outputStream = process.stdout;
 } else if (!output) {
-  inputStream = createReadStream(input);
+  checkFileExist(input)
+  inputStream = fs.createReadStream(input);
   outputStream = process.stdout;
 } else if (!input) {
+  checkFileExist(output)
   inputStream = process.stdin;
-  outputStream = createWriteStream(output, { flags: 'a' });
+  outputStream = fs.createWriteStream(output, { flags: 'a' });
 } else {
-  inputStream = createReadStream(input);
-  outputStream = createWriteStream(output, { flags: 'a' });
+  checkFileExist(input)
+  checkFileExist(output)
+  inputStream = fs.createReadStream(input);
+  outputStream = fs.createWriteStream(output, { flags: 'a' });
 }
-inputStream.on('error', () => {
-  process.stderr.write(`File ${input} does not exist or cannot be accessed. Please check the file path or accessibility.`)
-  process.exit(1);
-});
-outputStream.on('error', () => {
-  process.stderr.write(`File ${output} does not exist or cannot be accessed. Please check the file path or accessibility.`)
-  process.exit(1);
-});
 
 createEncryptionStream(
   inputStream,
