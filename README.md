@@ -13,6 +13,11 @@ Open the project in any text editor with built-in CLI or in any installed CLI an
  npm install
 ```
 
+Go to the branch with the app:
+```bash
+ git checkout develop
+```
+
 To run the program use `node index.js` with the available options.
 
 ## Using
