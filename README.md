@@ -10,19 +10,19 @@ First of all, clone a project:
  git clone https://github.com/inq666/Caesar-cipher-CLI-tool.git
 ```
 
-Open the project in any text editor with built-in CLI or in any installed CLI and install dependencies:
-
-```bash
- npm install
-```
-
-Go to the branch with the app:
+Open the project in any text editor with built-in CLI or in any installed CLI and move to the branch with the app:
 
 ```bash
  git checkout develop
 ```
 
 To run the program use `node index.js` with the available options.
+
+Install dependencies:
+
+```bash
+ npm install
+```
 
 ## Using
 
@@ -45,6 +45,10 @@ Below are the available options:
 
 #### Examples of using
 
-1. `bash node index.js -i input.txt -o output.txt -s 7 -a decode`
+```bash
+node index.js -i input.txt -o output.txt -s 7 -a decode
+```
 
-2. `bash node index.js --input input.txt --output output.txt --shift -5 --action encode`
+```bash
+node index.js --input input.txt --output output.txt --shift -5 --action encode
+```
