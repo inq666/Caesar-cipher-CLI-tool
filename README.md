@@ -17,7 +17,6 @@ Open the project in any text editor with built-in CLI or in any installed CLI an
 ```
 
 Go to the branch with the app:
-
 ```bash
  git checkout develop
 ```
