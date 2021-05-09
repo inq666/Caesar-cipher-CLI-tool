@@ -35,11 +35,11 @@ Below are the available options:
 4. If outpuit and input are missed, access will be provided to directly enter text into the CLI, which will be output to the CLI after modification.
 5. If the file is not available or the path to the file is incorrect, you will see an error and the program will exit.
 #### Examples of using
-1.
-`` bash
+
+1. `` bash
 node index.js -i input.txt -o output.txt -s 7 -a decode
 ``
-2.
-`` bash
+
+2. `` bash
 node index.js --input input.txt --output output.txt --shift -5 -action encode
 ``
