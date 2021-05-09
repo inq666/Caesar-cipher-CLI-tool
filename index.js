@@ -21,7 +21,11 @@ if (!Number.isInteger(Number(shift))) {
   process.exit(1);
 }
 if ((action !== 'encode' && action !== 'decode')) {
-  process.stderr.write("Missing or invalid value entered. Action is the required argument which only accepts one of the two available values (decode/encode)");
+
+}
+
+if (output === input) {
+  process.stderr.write("Two identical files selected");
   process.exit(1);
 }
 
@@ -33,6 +37,8 @@ const checkFileExist = (path) => {
     process.exit(1);
   }
 };
+
+
 
 let inputStream;
 let outputStream;

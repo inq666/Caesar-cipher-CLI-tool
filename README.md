@@ -40,7 +40,7 @@ Below are the available options:
 5. `Action` and `Shift` are required parameters, without which the program will not start, if you skip these options, an error will be displayed in the CLI and the program will exit.
 6. If input is missed, access will be provided to directly enter text into the CLI. To end the program use `CTRL + C`.
 7. If output is missed, the modified text from the input will be displayed in the CLI.
-8. If outpuit and input are missed, access will be provided to directly enter text into the CLI, which will be output to the CLI after modification.
+8. If output and input are missed, access will be provided to directly enter text into the CLI, which will be output to the CLI after modification.
 9. If the file is not available or the path to the file is incorrect, you will see an error and the program will exit.
 
 #### Examples of using
