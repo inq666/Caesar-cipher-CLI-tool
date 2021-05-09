@@ -41,5 +41,5 @@ node index.js -i input.txt -o output.txt -s 7 -a decode
 ``
 
 2. `` bash
-node index.js --input input.txt --output output.txt --shift -5 -action encode
+node index.js --input input.txt --output output.txt --shift -5 --action encode
 ``
