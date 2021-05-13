@@ -23,12 +23,6 @@ if (!Number.isInteger(Number(shift))) {
 if ((action !== 'encode' && action !== 'decode')) {
 
 }
-
-if (output === input) {
-  process.stderr.write("Two identical files selected");
-  process.exit(1);
-}
-
 const checkFileExist = (path) => {
   try {
     fs.accessSync(path, fs.F_OK)
